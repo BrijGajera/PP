@@ -1,0 +1,58 @@
+import numpy as np
+
+# Function to calculate mean
+def calculate_mean(data):
+    return np.mean(data)
+
+# Function to calculate median
+def calculate_median(data):
+    return np.median(data)
+
+# Function to calculate variance
+def calculate_variance(data):
+    return np.var(data)
+
+# Function to calculate standard deviation
+def calculate_std_dev(data):
+    return np.std(data)
+
+# Function to display the menu
+def display_menu():
+    print("\nStatistics Calculator:")
+    print("1. Calculate Mean")
+    print("2. Calculate Median")
+    print("3. Calculate Variance")
+    print("4. Calculate Standard Deviation")
+    print("5. Exit")
+
+# Main function to interact with the user
+def statistics_calculator():
+    while True:
+        display_menu()
+        choice = input("Enter the operation number (1-5): ")
+
+        if choice == '5':
+            print("Exiting the program.")
+            break
+
+        # Input list of numbers
+        data = list(map(float, input("Enter the list of numbers separated by space: ").split()))
+
+        # Perform operation based on user's choice
+        if choice == '1':
+            result = calculate_mean(data)
+            print(f"\nMean: {result}")
+        elif choice == '2':
+            result = calculate_median(data)
+            print(f"\nMedian: {result}")
+        elif choice == '3':
+            result = calculate_variance(data)
+            print(f"\nVariance: {result}")
+        elif choice == '4':
+            result = calculate_std_dev(data)
+            print(f"\nStandard Deviation: {result}")
+        else:
+            print("Invalid choice. Please enter a number between 1 and 5.")
+
+# Run the program
+statistics_calculator()
